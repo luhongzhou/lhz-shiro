@@ -9,7 +9,8 @@ import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.web.bind.annotation.*;
 
-@RestController("/index")
+@RestController
+@RequestMapping("user")
 public class IndexController {
 
     @RequestMapping(value = "/login" ,method = RequestMethod.POST)
@@ -40,7 +41,7 @@ public class IndexController {
      * @return
      */
     @RequiresPermissions({"add","query"})
-    @GetMapping(value = "/testPermissions")
+    @PostMapping(value = "/testPermissions")
     @ResponseBody
     public String testPermissions(){
         return "success";

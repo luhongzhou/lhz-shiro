@@ -45,7 +45,7 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/js/**", "anon");
         filterChainDefinitionMap.put("/img/**", "anon");
         //放开登录url的过滤
-        filterChainDefinitionMap.put("/index", "authc");
+        filterChainDefinitionMap.put("/user/login", "anon");
         ///
         //对于指定的url，使用自定义filter进行验证
 //        filterChainDefinitionMap.put("/targetUrl", "myFilter");
